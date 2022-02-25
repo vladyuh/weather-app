@@ -1,0 +1,8 @@
+mixin breadcrumb(data, modify)
+  .breadcrumb(class=""+(modify ? modify : '')+"")
+    ul
+      each item in data
+        if item.isActive
+          li: a(href=item.link class="is-active")= item.text
+        else
+          li: a(href=item.link)= item.text

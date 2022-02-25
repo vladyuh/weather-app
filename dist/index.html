@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Главная</title>
+    <meta name="theme-color" content="#000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  </head>
+  <body class="perf-no-animation page">
+    <header>
+      <div class="container">
+        <div class="header">
+          <div class="header-burger">
+                  <div class="burger"><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="header-logo">
+            <div class="header-logo__img"></div>
+          </div>
+          <div class="header-nav">
+            <ul class="header-nav__ul"></ul>
+          </div>
+          <div class="header-feedback"></div>
+        </div>
+      </div>
+    </header>
+    <div class="mobileMenu">
+      <div class="container">
+        <div class="mobileMenu-header">
+          <div class="mobileMenu-header__toggle">
+                <div class="burger open"><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="mobileMenu-nav">
+          <ul class="mobileMenu-nav__ul"></ul>
+        </div>
+        <div class="mobileMenu-footer"></div>
+      </div>
+    </div>
+    <main>
+      <div class="preloader is-active"></div>
+      <section class="weather">
+        <div class="container">
+          <div class="map-block" id="map"></div>
+          <div class="weather-block">
+            <div class="weather-block__location">
+              <svg width="24" height="24">
+                <use xlink:href="/img/sprites/sprite.svg#ic_place"></use>
+              </svg>
+              <div class="location">Текущее местоположение</div>
+            </div>
+            <div class="weather-block__degree"></div>
+            <div class="weather-block__status">
+              <div class="state"></div>
+              <div class="feels"></div>
+            </div>
+            <div class="weather-block__icon"><img width="48" height="48"></div>
+            <div class="weather-block__datetime">
+              <div class="morn">
+                <svg width="24" height="24">
+                  <use xlink:href="/img/sprites/sprite.svg#ic_day"></use>
+                </svg><span></span>
+              </div>
+              <div class="night">
+                <svg width="24" height="24">
+                  <use xlink:href="/img/sprites/sprite.svg#ic_night"></use>
+                </svg><span></span>
+              </div>
+            </div>
+            <div class="weather-block__extra">
+              <div class="hourly__title">Погода на ближайший час:</div>
+              <div class="hourly"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--footer
+    block footer
+    	include ../../blocks/modules/footer/footer.pug
+    -->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=f8950d3f-628a-4c81-af2c-9dce28e4014a&amp;lang=ru_RU" type="text/javascript"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    height: 69px;
+    width: 100%;
+    transition: all 0.25s ease;
+
+    &.scroll-up,
+    &:focus-within {
+        top: 0;
+    }
+
+    &.scroll-down {
+        top: -100%;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    &-burger {
+        display: none;
+        @media screen and (max-width: 1024px) {
+            display: block;
+        }
+    }
+    &-logo {
+        max-width: 126px;
+        width: 100%;
+        &__img {
+            padding-top: 49px / 126px * 100%;
+            position: relative;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 1024px) {
+            margin-left: auto;
+        }
+    }
+    &-nav {
+        margin-left: auto;
+        &__ul {
+            display: flex;
+            li {
+                margin: 0 10px;
+            }
+        }
+        @media screen and (max-width:1024px) {
+            display: none;
+        }
+    }
+}

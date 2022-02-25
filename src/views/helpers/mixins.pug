@@ -1,0 +1,12 @@
+mixin icons(id, size)
+  if size
+    svg(width=''+size+'' height=''+size+'')
+      use(xlink:href="/img/sprites/sprite.svg"+id)
+  else
+    svg(width="24" height="24")
+      use(xlink:href="/img/sprites/sprite.svg"+id)
+
+mixin listUl(list)
+  ul
+    each val in list
+      li= val

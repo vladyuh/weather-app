@@ -1,0 +1,36 @@
+.mobileMenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    width: 300px;
+    background: #eee;
+    transition: transform 0.3s ease;
+    overflow-y: scroll;
+    z-index: 1001;
+    &.opened {
+        transform: translateX(0);
+    }
+    &-header {
+        &__toggle {
+            display: flex;
+            align-items: center;
+            height: 69px;
+        }
+    }
+    &-nav {
+        &__ul li {
+            font-size: 18px;
+            line-height: 120%;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .mobileMenu {
+        display: block;
+    }
+}

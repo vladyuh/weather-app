@@ -1,0 +1,36 @@
+extends layouts/default
+include helpers/mixins
+include ../blocks/components/form/form.pug
+
+
+block variables
+    - const title = "Главная"
+
+block content
+    .preloader.is-active
+    section.weather
+        .container
+            .map-block#map
+            .weather-block
+                .weather-block__location
+                    +icons('#ic_place',24)
+                    .location Текущее местоположение
+                .weather-block__degree
+                .weather-block__status
+                    .state
+                    .feels
+                .weather-block__icon
+                    img(width="48" height="48")
+                .weather-block__datetime
+                    .morn
+                        +icons('#ic_day', 24)
+                        span
+                    .night
+                        +icons('#ic_night', 24)
+                        span
+                .weather-block__extra
+                    .hourly__title Погода на ближайший час:
+                    .hourly
+block scripts
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=f8950d3f-628a-4c81-af2c-9dce28e4014a&lang=ru_RU" type="text/javascript")
+    script(src="js/main.js")

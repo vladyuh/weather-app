@@ -1,0 +1,97 @@
+$font-size: 14px;
+$line-height: 18px;
+$defaultPadding: 15px;
+$paddingWithIcon: 15px 15px 15px 40px;
+$invalid: red;
+$inputHeight: 48px;
+$iconDimensions: 20px;
+
+input:not([type=checkbox]):not([type=radio]),
+textarea {
+  outline: none;
+  resize: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+}
+
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+select,
+textarea {
+  border: none;
+  transition: all 0.25s ease;
+  border: 1px solid $btn;
+  width: 100%;
+  outline: none;
+  padding: $defaultPadding;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: #000;
+  background-color: #fff;
+
+  &::placeholder {
+    color: #000;
+  }
+}
+
+select{
+  option{
+    line-height: normal;
+  }
+}
+
+.input,
+.textarea {
+  display: flex;
+  flex-direction: column;
+}
+
+.input,
+.select,
+.textarea {
+  &-icon__wrap {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 15px;
+      left: 10px;
+      display: flex;
+      align-items: center;
+      width: $iconDimensions;
+      height: $iconDimensions;
+    }
+
+    input:not([type=checkbox]):not([type=radio]),
+    select,
+    textarea {
+      width: 100%;
+      padding: $paddingWithIcon !important;
+    }
+  }
+}
+
+.form {
+  &__field {
+    margin-bottom: 10px;
+
+    & span.label {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+  }
+}
+
+.submitted input:invalid,
+.submitted select:invalid,
+.submitted textarea:invalid,
+.submitted .select .select__value.is-invalid {
+  border-color: $invalid;
+}
