@@ -88,30 +88,30 @@ for (var i = 0; i < submit.length; i++) {
 }
 
 function initMap(){
-    ymaps.ready(init);
-    function init() {
-        var location = ymaps.geolocation;
-        var myMap = new ymaps.Map('map', {
-            center: [55.76, 37.64],
-            zoom: 8,
-            controls: [],
-        }, {
-            searchControlProvider: 'yandex#search'
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            var location = new Array();
+            location[0] = position.coords.latitude;
+            location[1] = position.coords.longitude;
+
+            initWeather(location);
+
+            ymaps.ready(init);
+            function init() {
+                var location = ymaps.geolocation;
+                var myMap = new ymaps.Map('map', {
+                    center: [position.coords.latitude, position.coords.longitude],
+                    zoom: 10,
+                    controls: [],
+                }, {
+                    searchControlProvider: 'yandex#search'
+                });
+            }
         });
-        location.get()
-            .then(
-                function(result) {
-                    myMap.geoObjects.add(result.geoObjects);
-                    myMap.setCenter(result.geoObjects.position, 12, {
-                        checkZoomRange: true
-                    });
-                    initWeather(result.geoObjects.position);
-                },
-                function(err) {
-                    console.log('Ошибка: ' + err)
-                }
-            );
     }
+
+
 }
 
 initMap();
